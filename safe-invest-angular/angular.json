@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "31bb89ae-5002-46fc-ae85-325fdc6372aa"
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "safe-invest-front": {
+    "safe-invest-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/safe-invest-front",
+            "outputPath": "dist/safe-invest-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,8 +36,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
-          },
+            "scripts": [ "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            },
           "configurations": {
             "production": {
               "budgets": [
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "safe-invest-front:build:production"
+              "browserTarget": "safe-invest-angular:build:production"
             },
             "development": {
-              "browserTarget": "safe-invest-front:build:development"
+              "browserTarget": "safe-invest-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "safe-invest-front:build"
+            "browserTarget": "safe-invest-angular:build"
           }
         },
         "test": {
@@ -104,11 +104,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
-          }
+            "scripts": [ "node_modules/bootstrap/dist/js/bootstrap.min.js"]
+            }
         }
       }
     }
   },
-  "defaultProject": "safe-invest-front"
+  "defaultProject": "safe-invest-angular"
 }

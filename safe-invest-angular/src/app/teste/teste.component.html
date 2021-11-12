@@ -1,0 +1,24 @@
+<div class="mt-4">
+  <label>Endereço da carteira</label>
+  <input type="text" [(ngModel)]="endereco" />
+
+  <button (click)="teste()">AQUI</button>
+</div>
+
+<div class="table-responsive">
+  <table class="table mt-4 re">
+    <thead>
+      <tr>
+        <th scope="col">Quantidade do Token</th>
+        <th scope="col">Token</th>
+        <th scope="col">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of transacoes">
+        <td>{{item.value.slice(0,(item.value.length-18))}},{{item.value.slice((item.value.length-18),(item.value.length-16))}}</td>
+        <td>{{item.tokenName}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
