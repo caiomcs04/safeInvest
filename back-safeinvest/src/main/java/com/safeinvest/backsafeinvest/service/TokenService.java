@@ -1,5 +1,7 @@
 package com.safeinvest.backsafeinvest.service;
 
+import com.safeinvest.backsafeinvest.Util.MessageUtils;
+import com.safeinvest.backsafeinvest.exception.BusinessException;
 import com.safeinvest.backsafeinvest.model.Token;
 import com.safeinvest.backsafeinvest.repository.TokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,16 @@ public class TokenService {
     }
 
     public Token save(Token token){
+
+        Optional<Token> optionalStock = tokenRepository.findByTokenName(token.getTokenName());
+        if (optionalStock.isPresent()) {
+            throw new BusinessException(MessageUtils.SERVER_ALREADY_EXISTS);
+        }
+
+        Optional<Token> optionalStock2 = tokenRepository.findByContract(token.getContract());
+        if (optionalStock2.isPresent()) {
+            throw new BusinessException(MessageUtils.SERVER_ALREADY_EXISTS);
+        }
         return tokenRepository.save(token);
     }
 

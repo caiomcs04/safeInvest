@@ -12,12 +12,17 @@
         <th scope="col">Quantidade do Token</th>
         <th scope="col">Token</th>
         <th scope="col">Valor</th>
+        <th scope="col">Data</th>
+
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of transacoes">
-        <td>{{item.value.slice(0,(item.value.length-18))}},{{item.value.slice((item.value.length-18),(item.value.length-16))}}</td>
+        <td>{{item.value.slice(0,(item.value.length-18))}},{{item.value.slice((item.value.length-18))}}</td>
         <td>{{item.tokenName}}</td>
+        <td>{{usdValue(item)}}</td>
+        <td>{{timeConverter(item.timeStamp)}}</td>
+
       </tr>
     </tbody>
   </table>
