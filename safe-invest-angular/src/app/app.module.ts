@@ -1,26 +1,32 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
+import { ToastrModule } from 'ngx-toastr';
 
-import { AppComponent } from './app.component';
-import { TesteComponent } from './teste/teste.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppComponent } from "./app.component";
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
+import { AppRoutingModule } from "./app-routing.module";
+import { ComponentsModule } from "./components/components.module";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TesteComponent
-  ],
   imports: [
-    BrowserModule,
-    CommonModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    ComponentsModule,
+    NgbModule,
+    RouterModule,
+    AppRoutingModule,
+    ToastrModule.forRoot()
   ],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
