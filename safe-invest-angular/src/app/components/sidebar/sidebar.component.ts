@@ -31,24 +31,24 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
 
-  {
-    path: "/user",
-    title: "User Profile",
-    icon: "icon-single-02",
-    class: ""
-  },
-  {
-    path: "/tables",
-    title: "Table List",
-    icon: "icon-puzzle-10",
-    class: ""
-  },
-  {
-    path: "/typography",
-    title: "Typography",
-    icon: "icon-align-center",
-    class: ""
-  },
+  // {
+  //   path: "/user",
+  //   title: "User Profile",
+  //   icon: "icon-single-02",
+  //   class: ""
+  // },
+  // {
+  //   path: "/tables",
+  //   title: "Table List",
+  //   icon: "icon-puzzle-10",
+  //   class: ""
+  // },
+  // {
+  //   path: "/typography",
+  //   title: "Typography",
+  //   icon: "icon-align-center",
+  //   class: ""
+  // },
 ];
 
 @Component({
@@ -59,7 +59,7 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
