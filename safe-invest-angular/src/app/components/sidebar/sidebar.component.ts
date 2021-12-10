@@ -20,9 +20,9 @@ export const ROUTES: RouteInfo[] = [
     class: ""
   },
   {
-    path: "/maps",
-    title: "Maps",
-    icon: "icon-pin",
+    path: "/arbitragem",
+    title: "Arbitragem",
+    icon: "icon-bank",
     class: "" },
   {
     path: "/notifications",
